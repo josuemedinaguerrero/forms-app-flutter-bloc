@@ -28,12 +28,7 @@ class _CubitCounterView extends StatelessWidget {
         actions: [IconButton(onPressed: () => context.read<CounterCubit>().reset(), icon: Icon(Icons.refresh_outlined))],
       ),
       body: Center(
-        child: BlocBuilder<CounterCubit, CounterState>(
-          builder: (context, state) {
-            print('CONSTRUYENDO ANDO');
-            return Text('Counter value: ${state.counter}');
-          },
-        ),
+        child: BlocBuilder<CounterCubit, CounterState>(builder: (context, state) => Text('Counter value: ${state.counter}')),
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
